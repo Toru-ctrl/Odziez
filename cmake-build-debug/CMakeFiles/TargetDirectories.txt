@@ -1,0 +1,3 @@
+C:/Users/SirMi/CLionProjects/Odziez/cmake-build-debug/CMakeFiles/Odziez.dir
+C:/Users/SirMi/CLionProjects/Odziez/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/SirMi/CLionProjects/Odziez/cmake-build-debug/CMakeFiles/rebuild_cache.dir
