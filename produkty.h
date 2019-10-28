@@ -97,10 +97,28 @@ public:
     void dodaj(T obiekt){
         this->kosz.push_back(obiekt);
     }
-    vector<T> lista()
+    vector<T> get_koszyk()
     {
         return this->kosz;
     }
+    void wypisz(){
+        string nazwa1;
+        float cena1;
+        char plec1;
+        int j =1;
+        for(auto i = kosz.begin(); i != kosz.end();i++){
+            nazwa1 =(*i).get_nazwa();
+            cena1 = (*i).get_cena();
+            plec1 = (*i).get_plec();
+            cout<< j<<". Nazwa produktu: "<< nazwa1 << ". Cena produktu: "<< cena1 << ". Produkt przeznaczony dla ";
+            if(plec1 == 'K') cout<< "Kobiet.";
+            if(plec1 == 'M') cout<< "Mezczyzn.";
+            if(plec1 == 'O') cout<< "obydwu plci.";
+            cout<<endl;
+            j++;
+            }
+        }
+
 };
 template <typename C>
 class FiltrCen{
