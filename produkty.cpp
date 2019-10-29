@@ -18,20 +18,25 @@ string Produkt::get_nazwa() {
 char Produkt::get_plec() {
     return this->plec;
 }
-Buty::Buty(string nazwa, float cena ,char plec, int rozmiar, string firma):Produkt(nazwa,cena,plec) {
+Buty::Buty(string nazwa, float cena ,char plec, int rozmiar, string firma, string material):Produkt(nazwa,cena,plec) {
     this->firma = firma;
     this->rozmiar = rozmiar;
+    this->material = material;
 }
 Buty::~Buty() {}
 string Buty::get_firma() {
     return this->firma;
 }
+string Buty::get_material(){
+    return this->material;
+}
 int Buty::get_rozmiar() {
     return this->rozmiar;
 }
 
-Torba::Torba(string nazwa, float cena, char plec, int pojemnosc):Produkt(nazwa,cena,plec) {
+Torba::Torba(string nazwa, float cena, char plec, int pojemnosc,string material):Produkt(nazwa,cena,plec) {
     this->pojemnosc = pojemnosc;
+    this->material = material;
 }
 
 Torba::~Torba() {}
@@ -39,9 +44,13 @@ Torba::~Torba() {}
 int Torba::get_pojemnosc() {
     return this->pojemnosc;
 }
+string Torba::get_material() {
+    return this->material;
+}
 
-Pasek::Pasek(string nazwa, float cena, char plec, int dlugosc):Produkt(nazwa,cena,plec) {
+Pasek::Pasek(string nazwa, float cena, char plec, int dlugosc,string material):Produkt(nazwa,cena,plec) {
     this->dlugosc = dlugosc;
+    this->material = material;
 }
 
 Pasek::~Pasek() {}
@@ -70,8 +79,9 @@ string Okulary::get_kolor() {
     return this->kolor_oprawek;
 }
 
-Zegarek::Zegarek(string nazwa, float cena, char plec, string typ):Produkt(nazwa,cena,plec) {
+Zegarek::Zegarek(string nazwa, float cena, char plec, string typ,string typ_paska):Produkt(nazwa,cena,plec) {
     this->typ = typ;
+    this->typ_paska = typ_paska;
 }
 
 Zegarek::~Zegarek() {}
