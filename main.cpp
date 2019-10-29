@@ -69,6 +69,7 @@ int main() {
     cout << "Kolory do siebie ";
     (flaga)? cout<<"pasuja.":cout<<"nie pasuja.";
     cout <<endl;
+    zmien_pasek(zegarek1, bransoletka1);
 
     Koszyk <Produkt> kosz1;
     kosz1.dodaj(but1);
