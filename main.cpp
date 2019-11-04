@@ -48,6 +48,7 @@ int main() {
     Koszula koszula1("Koszula flanelowa",49.99,'O',"niebieski","oversize");
     Szalik szal1("Szal uniwersalny",30,'O',"niebieski",50);
 
+
     Buty* wsk_but1 = &but1;
     Torba* wsk_torba1 = &torba1;
     Pasek* wsk_pas1 = &pas1;
@@ -90,5 +91,17 @@ int main() {
     cena = c1.sprawdzcene(zegarek1);
     cout << cena << endl;
     kosz1.wypisz();
+
+    Rabat rabat1;
+    cena = but1.get_cena();
+    cout << "Cena butow przed odliczeniem: "<<cena<<endl;
+    rabat1.promocja(wsk_but1,0.12);
+    cena = but1.get_cena();
+    cout << "Cena butow po odliczeniu: "<<cena<<endl;
+    cena = pas1.get_cena();
+    cout << "Cena paska przed odliczeniem: "<<cena<<endl;
+    rabat1.bon_zakupowy(wsk_pas1,20);
+    cena = pas1.get_cena();
+    cout << "Cena paska po odliczeniu: "<<cena<<endl;
 
 }

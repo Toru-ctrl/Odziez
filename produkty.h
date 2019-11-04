@@ -14,6 +14,8 @@ public:
     string get_nazwa();
     float get_cena();
     char get_plec();
+    friend class Rabat;
+
 
 };
 
@@ -27,6 +29,10 @@ public:
     string get_firma();
     string get_material();
     friend bool material(Buty* p1, Torba* p2, Pasek* p3);
+    friend class Pasek;
+    friend class Torba;
+    void wyrownaj_poziom(Pasek, Torba);
+
 };
 
 class Torba:public Produkt{
@@ -38,6 +44,9 @@ public:
     int get_pojemnosc();
     string get_material();
     friend bool material(Buty* p1, Torba* p2, Pasek* p3);
+    friend class Pasek;
+    friend class Buty;
+    void wyrownaj_poziom(Pasek, Buty);
 };
 class Pasek:public Produkt{
     int dlugosc;
@@ -47,6 +56,9 @@ public:
     ~Pasek();
     int get_dlugosc();
     friend bool material(Buty* p1, Torba* p2, Pasek* p3);
+    friend class Buty;
+    friend class Torba;
+    void wyrownaj_poziom(Buty,Torba);
 };
 class Bizuteria:public Produkt{
     string material;
@@ -63,6 +75,8 @@ public:
     ~Okulary();
     string get_kolor();
    friend bool kolor(Koszula*,Portfel*, Szalik*, Okulary*);
+   friend class Szalik;
+   void zamiana_koloru(Szalik);
 };
 
 class Zegarek:public  Produkt{
@@ -100,15 +114,25 @@ public:
     string get_kolor();
     int get_dlugosc();
     friend bool kolor(Koszula*,Portfel*, Szalik*, Okulary*);
+    friend class Okulary;
+    void zamiana_koloru(Okulary);
 
 };
+class Rabat{
+public:
+    void promocja(Produkt*,float);
+    void bon_zakupowy(Produkt*, int);
+};
+
 template <typename T>
 class Koszyk
 {
     vector<T> kosz;
+    float kwota = 0;
 public:
     void dodaj(T obiekt){
         this->kosz.push_back(obiekt);
+        kwota += obiekt.get_cena();
     }
     vector<T> get_koszyk()
     {
@@ -131,6 +155,7 @@ public:
             j++;
             }
         }
+
 
 };
 template <typename C>
