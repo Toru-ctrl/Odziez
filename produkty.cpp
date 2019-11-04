@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "produkty.h"
 
 using namespace std;
@@ -18,20 +19,40 @@ string Produkt::get_nazwa() {
 char Produkt::get_plec() {
     return this->plec;
 }
-Buty::Buty(string nazwa, float cena ,char plec, int rozmiar, string firma):Produkt(nazwa,cena,plec) {
+Buty::Buty(string nazwa, float cena ,char plec, int rozmiar, string firma, string material):Produkt(nazwa,cena,plec) {
     this->firma = firma;
     this->rozmiar = rozmiar;
+    this->material = material;
 }
 Buty::~Buty() {}
 string Buty::get_firma() {
     return this->firma;
 }
+string Buty::get_material(){
+    return this->material;
+}
 int Buty::get_rozmiar() {
     return this->rozmiar;
 }
+void Buty::wyrownaj_poziom(Pasek p, Torba t) {
+    if(material == "filc"){
+        p.material = "filc";
+        t.material = "filc";
+    }
+    else if(material == "skora"){
+        p.material = "skora";
+        t.material = "skora";
+    }
+    else{
+        material = "zamsz";
+        p.material = "zamsz";
+        t.material = "zamsz";
+    }
+}
 
-Torba::Torba(string nazwa, float cena, char plec, int pojemnosc):Produkt(nazwa,cena,plec) {
+Torba::Torba(string nazwa, float cena, char plec, int pojemnosc,string material):Produkt(nazwa,cena,plec) {
     this->pojemnosc = pojemnosc;
+    this->material = material;
 }
 
 Torba::~Torba() {}
@@ -39,9 +60,28 @@ Torba::~Torba() {}
 int Torba::get_pojemnosc() {
     return this->pojemnosc;
 }
+string Torba::get_material() {
+    return this->material;
+}
+void Torba::wyrownaj_poziom(Pasek p, Buty b) {
+    if(material == "filc"){
+        p.material = "filc";
+        b.material = "filc";
+    }
+    else if(material == "skora"){
+        p.material = "skora";
+        b.material = "skora";
+    }
+    else{
+        material = "tworzywo sztuczne";
+        p.material = "tworzywo sztuczne";
+        b.material = "tworzywo sztuczne";
+    }
+}
 
-Pasek::Pasek(string nazwa, float cena, char plec, int dlugosc):Produkt(nazwa,cena,plec) {
+Pasek::Pasek(string nazwa, float cena, char plec, int dlugosc,string material):Produkt(nazwa,cena,plec) {
     this->dlugosc = dlugosc;
+    this->material = material;
 }
 
 Pasek::~Pasek() {}
@@ -49,7 +89,21 @@ Pasek::~Pasek() {}
 int Pasek::get_dlugosc() {
     return this->dlugosc;
 }
-
+void Pasek::wyrownaj_poziom(Buty b,Torba t) {
+    if(material == "filc"){
+        t.material = "filc";
+        b.material = "filc";
+    }
+    else if(material == "skora"){
+        t.material = "skora";
+        b.material = "skora";
+    }
+    else{
+        material = "skora ekologiczna";
+        t.material = "skora ekologiczna";
+        b.material = "skora ekologiczna";
+    }
+}
 Bizuteria::Bizuteria(string nazwa, float cena, char plec,string material):Produkt(nazwa,cena,plec) {
     this->material = material;
 }
@@ -69,9 +123,15 @@ Okulary::~Okulary() {}
 string Okulary::get_kolor() {
     return this->kolor_oprawek;
 }
+void Okulary::zamiana_koloru(Szalik s) {
+    string k = kolor_oprawek;
+    kolor_oprawek = s.kolor;
+    s.kolor = k;
+}
 
-Zegarek::Zegarek(string nazwa, float cena, char plec, string typ):Produkt(nazwa,cena,plec) {
+Zegarek::Zegarek(string nazwa, float cena, char plec, string typ,string typ_paska):Produkt(nazwa,cena,plec) {
     this->typ = typ;
+    this->typ_paska = typ_paska;
 }
 
 Zegarek::~Zegarek() {}
@@ -117,4 +177,20 @@ string Szalik::get_kolor() {
 
 int Szalik::get_dlugosc() {
     return this->dlugosc;
+}
+void Szalik::zamiana_koloru(Okulary o) {
+    string k = kolor;
+    kolor = o.kolor_oprawek;
+    o.kolor_oprawek = k;
+}
+void Rabat::promocja(Produkt* p, float procent){
+        if(procent > 0 && procent <1) {
+            p->cena *= (1-procent);
+          p->cena = round(p->cena);
+        }
+}
+
+void Rabat::bon_zakupowy(Produkt* p, int bon) {
+    (p->cena>bon)? p->cena -= bon: p->cena = 0;
+
 }
