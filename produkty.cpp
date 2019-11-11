@@ -194,3 +194,51 @@ void Rabat::bon_zakupowy(Produkt* p, int bon) {
     (p->cena>bon)? p->cena -= bon: p->cena = 0;
 
 }
+
+Typ_Produktu::Typ_Produktu(string nazwa_typu) {
+    this->nazwa_typu = nazwa_typu;
+}
+string Typ_Produktu::get_nazwa_typu() {
+    return this->nazwa_typu;
+}
+Firma::Firma(string nazwa_firmy) {
+    this->nazwa_firmy = nazwa_firmy;
+}
+string Firma::get_nazwa_firmy() {
+    return this->nazwa_firmy;
+}
+
+Kolekcja::Kolekcja(string nazwa_kolekcji) {
+    this->nazwa_kolekcji = nazwa_kolekcji;
+
+}
+
+string Kolekcja::get_nazwa_kolekcji() {
+    return this->nazwa_kolekcji;
+}
+
+Seria::Seria(string nazwa_serii) {
+    this->nazwa_serii = nazwa_serii;
+
+}
+
+string Seria::get_nazwa_serii() {
+    return this->nazwa_serii;
+}
+
+Sklep::Sklep(string adres_sklepu) {
+    this->adres_sklepu = adres_sklepu;
+}
+
+string Sklep::get_adres_sklepu() {
+    return this->adres_sklepu;
+}
+
+Siec_sklepow::Siec_sklepow(string nazwa_sieci) {
+    this->nazwa_sieci = nazwa_sieci;
+
+}
+
+string Siec_sklepow::get_nazwa_sieci() {
+    return this->nazwa_sieci;
+}

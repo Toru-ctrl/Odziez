@@ -4,7 +4,43 @@
 using namespace std;
 
 class Torba; class Pasek; class Bizuteria; class Koszula; class Szalik;class Portfel; class Zegarek;
-class Produkt{
+class Siec_sklepow{
+    string nazwa_sieci;
+public:
+    Siec_sklepow(string="sklep koszykarza");
+    string get_nazwa_sieci();
+};
+class Sklep:public Siec_sklepow{
+    string adres_sklepu;
+public:
+    Sklep(string="www.sklep.pl");
+    string get_adres_sklepu();
+};
+class Typ_Produktu:public Sklep{
+    string nazwa_typu;
+public:
+    Typ_Produktu(string ="odziez");
+    string get_nazwa_typu();
+};
+class Firma:public Typ_Produktu{
+    string nazwa_firmy;
+public:
+    Firma(string="Nike");
+    string get_nazwa_firmy();
+};
+class Kolekcja: public Firma{
+    string nazwa_kolekcji;
+public:
+    Kolekcja(string="Jordan");
+    string get_nazwa_kolekcji();
+};
+class Seria:public Kolekcja{
+    string nazwa_serii;
+public:
+    Seria(string="Air Jordan");
+    string get_nazwa_serii();
+};
+class Produkt:public Seria{
     string nazwa;
     float cena;
     char plec; // K,M,O
