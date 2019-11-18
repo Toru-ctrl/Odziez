@@ -235,3 +235,72 @@ public:
         return (float)obiekt.get_cena();
     }
 };
+class Sport{
+public:
+    virtual void fun1()=0;
+    virtual void fun2()=0;
+    virtual void fun3()=0;
+    virtual void fun4()=0;
+    virtual void fun5()=0;
+};
+
+class Sezon:public Sport{
+public:
+    void fun1();
+    void fun2();
+    void fun3();
+    void fun4();
+    void fun5();
+};
+
+class Obuwie{
+public:
+    virtual void fun1()=0;
+    virtual void fun2()=0;
+    virtual void fun3()=0;
+    virtual void fun4()=0;
+    virtual void fun5()=0;
+};
+
+class Klapki:public Obuwie{
+public:
+    void fun1();
+    void fun2();
+    void fun3();
+    void fun4();
+    void fun5();
+};
+class Odziez{
+public:
+    virtual void fun1()=0;
+    virtual void fun2()=0;
+    virtual void fun3()=0;
+    virtual void fun4()=0;
+    virtual void fun5()=0;
+};
+
+class Garnitur:public Odziez{
+public:
+    void fun1();
+    void fun2();
+    void fun3();
+    void fun4();
+    void fun5();
+};
+class Akcesoria{
+public:
+    virtual void fun1()=0;
+    virtual void fun2()=0;
+    virtual void fun3()=0;
+    virtual void fun4()=0;
+    virtual void fun5()=0;
+};
+
+class Plecak:public Akcesoria{
+public:
+    void fun1();
+    void fun2();
+    void fun3();
+    void fun4();
+    void fun5();
+};
