@@ -242,3 +242,89 @@ Siec_sklepow::Siec_sklepow(string nazwa_sieci) {
 string Siec_sklepow::get_nazwa_sieci() {
     return this->nazwa_sieci;
 }
+
+void Sezon::fun1() {
+    cout << "To jest funkcja nr 1"<<endl;
+}
+void Sezon::fun2() {
+    cout << "Ta funkcja jest druga"<<endl;
+}
+void Sezon::fun3() {
+    cout << "Czy to aby funkcja nr3?"<<endl;
+}
+void Sezon::fun4() {
+    cout << "Jest i kolejna. Oto nr 4!"<<endl;
+}
+void Sezon::fun5() {
+    cout << "Jestem funkcją na 5 z plusem!"<<endl;
+}
+void Klapki::fun1() {
+    cout << "To jest funkcja nr 1"<<endl;
+    cout << "Jestem funkcja z klasy Klapki"<<endl;
+}
+void Klapki::fun2() {
+    cout << "Ta funkcja jest druga"<<endl;
+    cout << "Jestem funkcja z klasy Klapki"<<endl;
+}
+void Klapki::fun3() {
+    cout << "Czy to aby funkcja nr3?"<<endl;
+    cout << "Jestem funkcja z klasy Klapki"<<endl;
+}
+void Klapki::fun4() {
+    cout << "Jest i kolejna. Oto nr 4!"<<endl;
+    cout << "Jestem funkcja z klasy Klapki"<<endl;
+}
+void Klapki::fun5() {
+    cout << "Jestem funkcją na 5 z plusem!"<<endl;
+    cout << "Jestem funkcja z klasy Klapki"<<endl;
+}
+void Garnitur::fun1() {
+    cout << "To jest funkcja nr 1"<<endl;
+    cout << "Jestem funkcja z klasy Garnitur"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+}
+void Garnitur::fun2() {
+    cout << "Ta funkcja jest druga"<<endl;
+    cout << "Jestem funkcja z klasy Garnitur"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+}
+void Garnitur::fun3() {
+    cout << "Czy to aby funkcja nr3?"<<endl;
+    cout << "Jestem funkcja z klasy Garnitur"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+}
+void Garnitur::fun4() {
+    cout << "Jest i kolejna. Oto nr 4!"<<endl;
+    cout << "Jestem funkcja z klasy Garnitur"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+}
+void Garnitur::fun5() {
+    cout << "Jestem funkcją na 5 z plusem!"<<endl;
+    cout << "Jestem funkcja z klasy Garnitur"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+}
+void Plecak::fun1() {
+    cout << "Jestem funkcja z klasy Plecak"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+    cout << "To jest funkcja nr 1"<<endl;
+}
+void Plecak::fun2() {
+    cout << "Jestem funkcja z klasy Plecak"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+    cout << "Ta funkcja jest druga"<<endl;
+}
+void Plecak::fun3() {
+    cout << "Jestem funkcja z klasy Plecak"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+    cout << "Czy to aby funkcja nr3?"<<endl;
+}
+void Plecak::fun4() {
+    cout << "Jestem funkcja z klasy Plecak"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+    cout << "Jest i kolejna. Oto nr 4!"<<endl;
+}
+void Plecak::fun5() {
+    cout << "Jestem funkcja z klasy Plecak"<<endl;
+    cout << "Bardzo lubie moja prace"<<endl;
+    cout << "Jestem funkcją na 5 z plusem!"<<endl;
+}
