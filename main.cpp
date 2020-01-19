@@ -1,5 +1,7 @@
 #include <iostream>
 #include "produkty.h"
+
+typedef bool b;
 using namespace std;
 bool material(Buty* p1, Torba* p2, Pasek* p3 =NULL)
 {
@@ -13,7 +15,7 @@ bool material(Buty* p1, Torba* p2, Pasek* p3 =NULL)
 
 bool kolor(Koszula* k1,Portfel* k2, Szalik* k3, Okulary* k4){
     bool czerwony = false;
-    bool niebieski = false;
+    b
     bool zolty = false;
     bool zielony = false;
     bool pomaranczowy = false;
