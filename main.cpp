@@ -1,5 +1,7 @@
 #include <iostream>
 #include "produkty.h"
+
+//Nowy push
 using namespace std;
 bool material(Buty* p1, Torba* p2, Pasek* p3 =NULL)
 {
