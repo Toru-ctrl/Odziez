@@ -50,6 +50,63 @@ public:
     string get_nazwa();
     float get_cena();
     char get_plec();
+    bool operator==(Produkt term)
+    {
+        return cena == term.get_cena();
+    }
+    bool operator==(const float &term)
+    {
+        return (cena == term);
+    }
+    bool operator!=(Produkt term)
+    {
+        return cena != term.get_cena();
+    }
+    bool operator!=(const float &term)
+    {
+        return (cena != term);
+    }
+    bool operator>(Produkt term)
+    {
+        return cena > term.get_cena();
+    }
+    bool operator>(const float &term)
+    {
+        return (cena > term);
+    }
+    bool operator<(Produkt term)
+    {
+        return cena < term.get_cena();
+    }
+    bool operator<(const float &term)
+    {
+        return (cena < term);
+    }
+    float operator+(Produkt term)
+    {
+        return cena + term.get_cena();
+    }
+    float operator+(const float &term)
+    {
+        return (cena + term);
+    }
+    void operator&(const float &term)
+    {
+        cena += term;
+    }
+    void operator&&(const float &term)
+    {
+        if(cena - term > 0)
+            cena -= term;
+        else
+            cena = 0;
+    }
+    void operator=(Produkt term)
+    {
+        nazwa = term.get_nazwa();
+        cena = term.get_cena();
+        plec = term.get_plec();
+    }
     friend class Rabat;
 
 
